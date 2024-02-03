@@ -111,18 +111,19 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 ELASTICSEARCH_DSL={
     'default': {
-        'hosts': 'localhost:8000',
-        'http_auth': ('username', 'password')
+        'hosts': 'http://localhost:9200',
+        'http_auth': ('elastic', 'Xu6i_aLnHjTlzZhR6k-*')
     }
 }
 
 # Multiple connections to multiple elastic clusters
 connections.configure(
-    default={'hosts': 'localhost'},
+    default={'hosts': 'http://localhost:8000'},
     dev={
-        'hosts': ['localhost:9200', 'www.bikodes.com:9300'],
+        'hosts': ['http://localhost:9200', 'https://www.bikodes.com:9300'],
         'snif_on_start': True
     }
 )
