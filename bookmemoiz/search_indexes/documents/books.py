@@ -57,7 +57,7 @@ class BookDocument(Document):
 
     publication_date = fields.DateField()
 
-    state = fields.StringField(
+    status = fields.StringField(
         analyzer=html_strip,
         fields={
             'raw': fields.StringField(analyzer='keyword'),
